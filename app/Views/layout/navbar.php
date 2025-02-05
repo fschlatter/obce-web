@@ -2,7 +2,6 @@
     class="navbar navbar-expand-sm navbar-light bg-light"
 >
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
         <button
             class="navbar-toggler d-lg-none"
             type="button"
@@ -17,12 +16,14 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <?= anchor(base_url("/"), 'Home', ['class'=>'nav-link']) ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-
+                <?php 
+                foreach ($okres as $okres) : ?>
+                    <li class="nav-item">
+                        <?= anchor("okres/".$okres['kod'], $okres['nazev'], ['class'=>'nav-link']) ?>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
