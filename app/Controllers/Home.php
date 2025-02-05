@@ -32,7 +32,7 @@ class Home extends BaseController
     {
         $this->data['okres'] = $this->okres->where('kod', $id)->findAll();
         $this->data['page_title'] = $this->data['okres'][0]['nazev'];
-        $this->data['obce'] = $this->obce->where('okres', $id)->findAll();
+        $this->data['obce'] = $this->obce->where('okres', $id)->orderBy('')->paginate(20);//podle adresnich mist joinovani a idk
         return view('okres', $this->data);
     }
 }
