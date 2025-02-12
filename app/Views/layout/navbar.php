@@ -21,7 +21,7 @@
                 <?php 
                 foreach ($okres as $okres) : ?>
                     <li class="nav-item">
-                        <?= anchor("okres/".$okres['kod'], $okres['nazev'], ['class'=>'nav-link']) ?>
+                        <?= anchor("okres/".$okres['kod'].'/20', $okres['nazev'], ['class'=>'nav-link']) ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
